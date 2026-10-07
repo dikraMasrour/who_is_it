@@ -1,2 +1,7 @@
 *.pt
 *.npz
+
+__pycache__
+venv
+
+test samples/
