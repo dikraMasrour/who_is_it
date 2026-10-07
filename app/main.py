@@ -4,11 +4,11 @@ import numpy as np
 from fastapi import FastAPI, File, UploadFile, HTTPException
 
 
-from engine import Embedder, inspect_weights
-from pipeline import detect_and_align, to_tensor, normalize, search, load_gallery, NoFaceDetected
+from .engine import Embedder, inspect_weights
+from .pipeline import detect_and_align, to_tensor, normalize, search, load_gallery, NoFaceDetected
 
-WEIGHTS_PATH = os.environ.get("FR_WEIGHTS_PATH", "../models/Glint360K_R100_TopoFR_9760.pt")
-GALLERY_PATH = os.environ.get("FR_GALLERY_PATH", "../gallery/b8730886ae__640ba9de6e__n130.npz")
+WEIGHTS_PATH = os.environ.get("FR_WEIGHTS_PATH", "models/Glint360K_R100_TopoFR_9760.pt")
+GALLERY_PATH = os.environ.get("FR_GALLERY_PATH", "gallery/b8730886ae__640ba9de6e__n130.npz")
 VERIF_THRESHOLD = float(os.environ.get("FR_VERIF_THRESHOLD", 0.225))
 
 app = FastAPI(title="Who is it? Face recognition API", version='1.0.0')

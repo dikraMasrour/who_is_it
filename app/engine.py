@@ -224,7 +224,7 @@ class Embedder:
 
     def __init__(self, weights_path, device="cpu", backbone=None):
         import torch
-        from iresnet import build_model
+        from .iresnet import build_model
 
         self.weights_path = weights_path
         self.device = device
